@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cmu_lex.h" />
+    <ClInclude Include="include\cmu_lts_model.h" />
+    <ClInclude Include="include\cst_alloc.h" />
+    <ClInclude Include="include\cst_args.h" />
+    <ClInclude Include="include\cst_audio.h" />
+    <ClInclude Include="include\cst_cart.h" />
+    <ClInclude Include="include\cst_endian.h" />
+    <ClInclude Include="include\cst_error.h" />
+    <ClInclude Include="include\cst_features.h" />
+    <ClInclude Include="include\cst_ffeatures.h" />
+    <ClInclude Include="include\cst_file.h" />
+    <ClInclude Include="include\cst_hrg.h" />
+    <ClInclude Include="include\cst_item.h" />
+    <ClInclude Include="include\cst_lexicon.h" />
+    <ClInclude Include="include\cst_lts.h" />
+    <ClInclude Include="include\cst_lts_rewrites.h" />
+    <ClInclude Include="include\cst_math.h" />
+    <ClInclude Include="include\cst_phoneset.h" />
+    <ClInclude Include="include\cst_regex.h" />
+    <ClInclude Include="include\cst_regex_defs.h" />
+    <ClInclude Include="include\cst_relation.h" />
+    <ClInclude Include="include\cst_sigpr.h" />
+    <ClInclude Include="include\cst_socket.h" />
+    <ClInclude Include="include\cst_ss.h" />
+    <ClInclude Include="include\cst_string.h" />
+    <ClInclude Include="include\cst_sts.h" />
+    <ClInclude Include="include\cst_synth.h" />
+    <ClInclude Include="include\cst_tokenstream.h" />
+    <ClInclude Include="include\cst_track.h" />
+    <ClInclude Include="include\cst_utterance.h" />
+    <ClInclude Include="include\cst_utt_utils.h" />
+    <ClInclude Include="include\cst_val.h" />
+    <ClInclude Include="include\cst_val_const.h" />
+    <ClInclude Include="include\cst_val_defs.h" />
+    <ClInclude Include="include\cst_viterbi.h" />
+    <ClInclude Include="include\cst_voice.h" />
+    <ClInclude Include="include\cst_wave.h" />
+    <ClInclude Include="include\flite.h" />
+    <ClInclude Include="include\flite_hts_engine.h" />
+    <ClInclude Include="include\HTS_engine.h" />
+    <ClInclude Include="include\usenglish.h" />
+    <ClInclude Include="include\us_ffeatures.h" />
+    <ClInclude Include="include\us_int_accent_cart.h" />
+    <ClInclude Include="include\us_int_tone_cart.h" />
+    <ClInclude Include="include\us_nums_cart.h" />
+    <ClInclude Include="include\us_phrasing_cart.h" />
+    <ClInclude Include="include\us_pos_cart.h" />
+    <ClInclude Include="include\us_regexes.h" />
+    <ClInclude Include="include\us_text.h" />
+    <ClInclude Include="src\HTS_hidden.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cmu_lex.c" />
+    <ClCompile Include="src\cmu_lex_data.c" />
+    <ClCompile Include="src\cmu_lex_entries.c" />
+    <ClCompile Include="src\cmu_lts_model.c" />
+    <ClCompile Include="src\cmu_lts_rules.c" />
+    <ClCompile Include="src\cmu_postlex.c" />
+    <ClCompile Include="src\cmu_us_kal.c" />
+    <ClCompile Include="src\cst_alloc.c" />
+    <ClCompile Include="src\cst_cart.c" />
+    <ClCompile Include="src\cst_error.c" />
+    <ClCompile Include="src\cst_features.c" />
+    <ClCompile Include="src\cst_ffeature.c" />
+    <ClCompile Include="src\cst_ffeatures.c" />
+    <ClCompile Include="src\cst_item.c" />
+    <ClCompile Include="src\cst_lexicon.c" />
+    <ClCompile Include="src\cst_lts.c" />
+    <ClCompile Include="src\cst_phoneset.c" />
+    <ClCompile Include="src\cst_regex.c" />
+    <ClCompile Include="src\cst_relation.c" />
+    <ClCompile Include="src\cst_string.c" />
+    <ClCompile Include="src\cst_synth.c" />
+    <ClCompile Include="src\cst_tokenstream.c" />
+    <ClCompile Include="src\cst_utterance.c" />
+    <ClCompile Include="src\cst_utt_utils.c" />
+    <ClCompile Include="src\cst_val.c" />
+    <ClCompile Include="src\cst_val_const.c" />
+    <ClCompile Include="src\cst_val_user.c" />
+    <ClCompile Include="src\cst_voice.c" />
+    <ClCompile Include="src\flite.c" />
+    <ClCompile Include="src\flite_hts_engine.c" />
+    <ClCompile Include="src\HTS_audio.c" />
+    <ClCompile Include="src\HTS_engine.c" />
+    <ClCompile Include="src\HTS_gstream.c" />
+    <ClCompile Include="src\HTS_label.c" />
+    <ClCompile Include="src\HTS_misc.c" />
+    <ClCompile Include="src\HTS_model.c" />
+    <ClCompile Include="src\HTS_pstream.c" />
+    <ClCompile Include="src\HTS_sstream.c" />
+    <ClCompile Include="src\HTS_vocoder.c" />
+    <ClCompile Include="src\main_flite_hts_engine.c" />
+    <ClCompile Include="src\regexp.c" />
+    <ClCompile Include="src\usenglish.c" />
+    <ClCompile Include="src\us_aswd.c" />
+    <ClCompile Include="src\us_expand.c" />
+    <ClCompile Include="src\us_ffeatures.c" />
+    <ClCompile Include="src\us_gpos.c" />
+    <ClCompile Include="src\us_int_accent_cart.c" />
+    <ClCompile Include="src\us_int_tone_cart.c" />
+    <ClCompile Include="src\us_nums_cart.c" />
+    <ClCompile Include="src\us_phoneset.c" />
+    <ClCompile Include="src\us_phrasing_cart.c" />
+    <ClCompile Include="src\us_pos_cart.c" />
+    <ClCompile Include="src\us_text.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{177A9CD7-8678-454D-8607-3102EF8E80F6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>flite_front</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;FLITE_PLUS_HTS_ENGINE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\1-项目\2-2英语tts\flite_front\flite_front\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

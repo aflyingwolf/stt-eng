@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\cmu_lex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cmu_lts_model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_alloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_args.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_audio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_cart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_endian.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_error.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_features.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_ffeatures.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_file.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_hrg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_item.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_lexicon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_lts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_lts_rewrites.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_math.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_phoneset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_regex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_regex_defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_relation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_sigpr.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_socket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_ss.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_string.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_sts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_synth.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_tokenstream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_track.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_utt_utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_utterance.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_val.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_val_const.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_val_defs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_viterbi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_voice.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\cst_wave.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\flite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\flite_hts_engine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\HTS_engine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_ffeatures.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_int_accent_cart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_int_tone_cart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_nums_cart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_phrasing_cart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_pos_cart.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_regexes.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\us_text.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\usenglish.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HTS_hidden.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cmu_lex.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmu_lex_data.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmu_lex_entries.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmu_lts_model.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmu_lts_rules.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmu_postlex.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cmu_us_kal.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_alloc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_cart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_error.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_features.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_ffeature.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_ffeatures.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_item.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_lexicon.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_lts.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_phoneset.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_regex.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_relation.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_string.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_synth.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_tokenstream.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_utt_utils.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_utterance.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_val.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_val_const.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_val_user.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cst_voice.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flite.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flite_hts_engine.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main_flite_hts_engine.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\regexp.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_aswd.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_expand.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_ffeatures.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_gpos.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_int_accent_cart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_int_tone_cart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_nums_cart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_phoneset.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_phrasing_cart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_pos_cart.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\us_text.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\usenglish.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_audio.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_engine.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_gstream.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_label.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_misc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_model.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_pstream.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_sstream.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HTS_vocoder.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
