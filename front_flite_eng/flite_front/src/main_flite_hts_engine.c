@@ -59,7 +59,7 @@ static void usage(void)
    fprintf(stderr, "Copyright (C) 2005-2016  Nagoya Institute of Technology\n");
    fprintf(stderr, "              2005-2008  Tokyo Institute of Technology\n");
    fprintf(stderr, "All rights reserved.\n");
-   fprintf(stderr, "\n%s\n", HTS_COPYRIGHT);
+
    fprintf(stderr, "CMU Flite\n");
    fprintf(stderr, "Version 2.0.0 (http://www.festvox.org/flite/)\n");
    fprintf(stderr, "Copyright (C) 1999-2014  Carnegie Mellon University\n");
@@ -96,18 +96,14 @@ int main(int argc, char **argv)
    char buff[INPUT_BUFF_SIZE];
    FILE *fp_txt = stdin;
    char *fn_txt = NULL;
-   char *fn_wav = NULL;
+   char *fn_label = NULL;
    char *fn_voice = NULL;
 
-   /* Flite+hts_engine */
-   Flite_HTS_Engine engine;
 
    /* parse command line */
    if (argc == 1)
       usage();
 
-   /* initialize engine */
-   Flite_HTS_Engine_initialize(&engine);
 
    /* get HTS voice file name */
    for (i = 0; i < argc; i++) {
@@ -116,17 +112,7 @@ int main(int argc, char **argv)
       if (argv[i][0] == '-' && argv[i][1] == 'h')
          usage();
    }
-   if (fn_voice == NULL) {
-      fprintf(stderr, "flite_hts_engine: HTS voice must be specified.\n");
-      exit(1);
-   }
 
-   /* load HTS voice */
-   if (Flite_HTS_Engine_load(&engine, fn_voice) != TRUE) {
-      fprintf(stderr, "flite_hts_engine: HTS voice cannot be loaded.\n");
-      Flite_HTS_Engine_clear(&engine);
-      exit(1);
-   }
 
    /* read command */
    while (--argc) {
@@ -137,69 +123,11 @@ int main(int argc, char **argv)
             --argc;
             break;
          case 'o':
-            fn_wav = *++argv;
+            fn_label = *++argv;
             --argc;
             break;
          case 'h':
             usage();
-            break;
-         case 's':
-            Flite_HTS_Engine_set_sampling_frequency(&engine, (size_t) atoi(*++argv));
-            --argc;
-            break;
-         case 'p':
-            Flite_HTS_Engine_set_fperiod(&engine, (size_t) atoi(*++argv));
-            --argc;
-            break;
-         case 'a':
-            Flite_HTS_Engine_set_alpha(&engine, atof(*++argv));
-            --argc;
-            break;
-         case 'b':
-            Flite_HTS_Engine_set_beta(&engine, atof(*++argv));
-            --argc;
-            break;
-         case 'r':
-            Flite_HTS_Engine_set_speed(&engine, atof(*++argv));
-            --argc;
-            break;
-         case 'f':
-            switch (*(*argv + 2)) {
-            case 'm':
-               Flite_HTS_Engine_add_half_tone(&engine, atof(*++argv));
-               break;
-            default:
-               fprintf(stderr, "flite_hts_engine: Invalid option '-f%c'.\n", *(*argv + 2));
-               exit(1);
-            }
-            --argc;
-            break;
-         case 'u':
-            Flite_HTS_Engine_set_msd_threshold(&engine, 1, atof(*++argv));
-            --argc;
-            break;
-         case 'j':
-            switch (*(*argv + 2)) {
-            case 'm':
-               Flite_HTS_Engine_set_gv_weight(&engine, 0, atof(*++argv));
-               break;
-            case 'f':
-            case 'p':
-               Flite_HTS_Engine_set_gv_weight(&engine, 1, atof(*++argv));
-               break;
-            default:
-               fprintf(stderr, "flite_hts_engine: Invalid option '-j%c'.\n", *(*argv + 2));
-               exit(1);
-            }
-            --argc;
-            break;
-         case 'g':
-            Flite_HTS_Engine_set_volume(&engine, atof(*++argv));
-            --argc;
-            break;
-         case 'z':
-            Flite_HTS_Engine_set_audio_buff_size(&engine, atoi(*++argv));
-            --argc;
             break;
          default:
             fprintf(stderr, "flite_hts_engine: Invalid option '-%c'.\n", *(*argv + 1));
@@ -213,13 +141,16 @@ int main(int argc, char **argv)
    /* synthesis */
    if (fn_txt != NULL)
       fp_txt = fopen(fn_txt, "r");
+
    if (fgets(buff, INPUT_BUFF_SIZE, fp_txt) != NULL && strlen(buff) > 0)
-      Flite_HTS_Engine_synthesize(&engine, buff, fn_wav);
+   {
+	   Flite_HTS_Engine_synthesize(buff, fn_label);
+   }
+      
+   
    if (fn_txt != NULL)
       fclose(fp_txt);
 
-   /* free */
-   Flite_HTS_Engine_clear(&engine);
 
    return 0;
 }

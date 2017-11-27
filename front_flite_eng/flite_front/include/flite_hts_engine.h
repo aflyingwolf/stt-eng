@@ -42,6 +42,7 @@
 /* POSSIBILITY OF SUCH DAMAGE.                                       */
 /* ----------------------------------------------------------------- */
 
+
 #ifndef FLITE_HTS_ENGINE_H
 #define FLITE_HTS_ENGINE_H
 
@@ -55,53 +56,12 @@
 
 FLITE_HTS_ENGINE_H_START;
 
-#include "HTS_engine.h"
 
-typedef struct _Flite_HTS_Engine {
-   HTS_Engine engine;
-} Flite_HTS_Engine;
-
-/* Flite_HTS_Engine_initialize: initialize system */
-void Flite_HTS_Engine_initialize(Flite_HTS_Engine * f);
-
-/* Flite_HTS_Engine_load: load HTS voice */
-HTS_Boolean Flite_HTS_Engine_load(Flite_HTS_Engine * f, const char *fn);
-
-/* Flite_HTS_Engine_set_sampling_frequency: set sampling frequency */
-void Flite_HTS_Engine_set_sampling_frequency(Flite_HTS_Engine * f, size_t i);
-
-/* Flite_HTS_Engine_set_fperiod: set frame period */
-void Flite_HTS_Engine_set_fperiod(Flite_HTS_Engine * f, size_t i);
-
-/* Flite_HTS_Engine_set_audio_buff_size: set audio buffer size */
-void Flite_HTS_Engine_set_audio_buff_size(Flite_HTS_Engine * engine, size_t i);
-
-/* Flite_HTS_Engine_set_volume: set volume in dB */
-void Flite_HTS_Engine_set_volume(Flite_HTS_Engine * engine, double d);
-
-/* Flite_HTS_Engine_set_alpha: set alpha */
-void Flite_HTS_Engine_set_alpha(Flite_HTS_Engine * f, double d);
-
-/* Flite_HTS_Engine_set_beta: set beta */
-void Flite_HTS_Engine_set_beta(Flite_HTS_Engine * f, double d);
-
-/* Flite_HTS_Engine_add_half_tone: add half-tone */
-void Flite_HTS_Engine_add_half_tone(Flite_HTS_Engine * f, double d);
-
-/* Flite_HTS_Engine_set_msd_threshold: set MSD threshold */
-void Flite_HTS_Engine_set_msd_threshold(Flite_HTS_Engine * f, size_t stream_index, double d);
-
-/* Flite_HTS_Engine_set_gv_weight: set GV weight */
-void Flite_HTS_Engine_set_gv_weight(Flite_HTS_Engine * f, size_t stream_index, double d);
-
-/* Flite_HTS_Engine_set_speed: set speech speed */
-void Flite_HTS_Engine_set_speed(Flite_HTS_Engine * engine, double f);
 
 /* Flite_HTS_Engine_synthesize: synthesize speech */
-HTS_Boolean Flite_HTS_Engine_synthesize(Flite_HTS_Engine * f, const char *txt, const char *wav);
+int Flite_HTS_Engine_synthesize( const char *txt, const char *wav);
 
-/* Flite_HTS_Engine_clear: free system */
-void Flite_HTS_Engine_clear(Flite_HTS_Engine * f);
+
 
 typedef struct _Flite_Text_Analyzer {
    void *pointer;
@@ -141,7 +101,7 @@ int Flite_Text_Analyzer_get_accent(Flite_Text_Analyzer * analyzer, int phoneme_i
 int Flite_Text_Analyzer_get_stress(Flite_Text_Analyzer * analyzer, int phoneme_index);
 
 /* Flite_Text_Analyzer_get_label_data: get label */
-HTS_Boolean Flite_Text_Analyzer_get_label_data(Flite_Text_Analyzer * analyzer, char ***label_data, int *label_size);
+int Flite_Text_Analyzer_get_label_data(Flite_Text_Analyzer * analyzer, char ***label_data, int *label_size);
 
 /* Flite_Text_Analyzer_clear: finalize flite front-end */
 void Flite_Text_Analyzer_clear(Flite_Text_Analyzer * analyzer);

@@ -50,7 +50,6 @@
     <ClInclude Include="include\cst_wave.h" />
     <ClInclude Include="include\flite.h" />
     <ClInclude Include="include\flite_hts_engine.h" />
-    <ClInclude Include="include\HTS_engine.h" />
     <ClInclude Include="include\usenglish.h" />
     <ClInclude Include="include\us_ffeatures.h" />
     <ClInclude Include="include\us_int_accent_cart.h" />
@@ -60,7 +59,6 @@
     <ClInclude Include="include\us_pos_cart.h" />
     <ClInclude Include="include\us_regexes.h" />
     <ClInclude Include="include\us_text.h" />
-    <ClInclude Include="src\HTS_hidden.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cmu_lex.c" />
@@ -93,15 +91,6 @@
     <ClCompile Include="src\cst_voice.c" />
     <ClCompile Include="src\flite.c" />
     <ClCompile Include="src\flite_hts_engine.c" />
-    <ClCompile Include="src\HTS_audio.c" />
-    <ClCompile Include="src\HTS_engine.c" />
-    <ClCompile Include="src\HTS_gstream.c" />
-    <ClCompile Include="src\HTS_label.c" />
-    <ClCompile Include="src\HTS_misc.c" />
-    <ClCompile Include="src\HTS_model.c" />
-    <ClCompile Include="src\HTS_pstream.c" />
-    <ClCompile Include="src\HTS_sstream.c" />
-    <ClCompile Include="src\HTS_vocoder.c" />
     <ClCompile Include="src\main_flite_hts_engine.c" />
     <ClCompile Include="src\regexp.c" />
     <ClCompile Include="src\usenglish.c" />
@@ -177,7 +166,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;FLITE_PLUS_HTS_ENGINE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>D:\1-项目\2-2英语tts\flite_front\flite_front\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\1-项目\2-2英语tts\flite_front\front_flite_eng\flite_front\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

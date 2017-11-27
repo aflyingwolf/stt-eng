@@ -283,84 +283,12 @@ static void create_label(cst_item * item, char *label)
 }
 
 
-/* Flite_HTS_Engine_initialize: initialize system */
-void Flite_HTS_Engine_initialize(Flite_HTS_Engine * f)
-{
-    HTS_Engine_initialize(&f->engine);
-}
 
-/* Flite_HTS_Engine_load: load HTS voice */
-HTS_Boolean Flite_HTS_Engine_load(Flite_HTS_Engine * f, const char *fn)
-{
-    HTS_Boolean result;
-    char *voices = strdup(fn);
-    result = HTS_Engine_load(&f->engine, &voices, 1);
-    free(voices);
-    return result;
-}
 
-/* Flite_HTS_Engine_set_sampling_frequency: set sampling frequency */
-void Flite_HTS_Engine_set_sampling_frequency(Flite_HTS_Engine * f, size_t i)
-{
-    HTS_Engine_set_sampling_frequency(&f->engine, i);
-}
-
-/* Flite_HTS_Engine_set_fperiod: set frame period */
-void Flite_HTS_Engine_set_fperiod(Flite_HTS_Engine * f, size_t i)
-{
-    HTS_Engine_set_fperiod(&f->engine, i);
-}
-
-/* Flite_HTS_Engine_set_audio_buff_size: set audio buffer size */
-void Flite_HTS_Engine_set_audio_buff_size(Flite_HTS_Engine * f, size_t i)
-{
-    HTS_Engine_set_audio_buff_size(&f->engine, i);
-}
-
-/* Flite_HTS_Engine_set_volume: set volume in dB */
-void Flite_HTS_Engine_set_volume(Flite_HTS_Engine * f, double d)
-{
-    HTS_Engine_set_volume(&f->engine, d);
-}
-
-/* Flite_HTS_Engine_set_alpha: set alpha */
-void Flite_HTS_Engine_set_alpha(Flite_HTS_Engine * f, double d)
-{
-    HTS_Engine_set_alpha(&f->engine, d);
-}
-
-/* Flite_HTS_Engine_set_beta: set beta */
-void Flite_HTS_Engine_set_beta(Flite_HTS_Engine * f, double d)
-{
-    HTS_Engine_set_beta(&f->engine, d);
-}
-
-/* Flite_HTS_Engine_add_half_tone: add half-tone */
-void Flite_HTS_Engine_add_half_tone(Flite_HTS_Engine * f, double d)
-{
-    HTS_Engine_add_half_tone(&f->engine, d);
-}
-
-/* Flite_HTS_Engine_set_msd_threshold: set MSD threshold */
-void Flite_HTS_Engine_set_msd_threshold(Flite_HTS_Engine * f, size_t stream_index, double d)
-{
-    HTS_Engine_set_msd_threshold(&f->engine, stream_index, d);
-}
-
-/* Flite_HTS_Engine_set_gv_weight: set GV weight */
-void Flite_HTS_Engine_set_gv_weight(Flite_HTS_Engine * f, size_t stream_index, double d)
-{
-    HTS_Engine_set_gv_weight(&f->engine, stream_index, d);
-}
-
-/* Flite_HTS_Engine_set_speed: set speech speed */
-void Flite_HTS_Engine_set_speed(Flite_HTS_Engine * f, double d)
-{
-    HTS_Engine_set_speed(&f->engine, d);
-}
-
-/* Flite_HTS_Engine_synthesize: synthesize speech */
-HTS_Boolean Flite_HTS_Engine_synthesize(Flite_HTS_Engine * f, const char *txt, const char *wav)
+/* 输入一行英文文本
+	输出label序列到txt中 
+*/
+int Flite_HTS_Engine_synthesize(const char *txt, const char *file)
 {
     int i;
     FILE *fp;
@@ -371,23 +299,23 @@ HTS_Boolean Flite_HTS_Engine_synthesize(Flite_HTS_Engine * f, const char *txt, c
     int label_size = 0;
 
     if (txt == NULL)
-      return FALSE;
+      return -1;
 
     /* text analysis part */
     v = REGISTER_VOX(NULL);
     if (v == NULL)
-      return FALSE;
+      return -2;
     u = flite_synth_text(txt, v);
     if (u == NULL) {
         UNREGISTER_VOX(v);
-        return FALSE;
+        return -3;
     }
     for (s = relation_head(utt_relation(u, "Segment")); s; s = item_next(s))
       label_size++;
     if (label_size <= 0) {
         delete_utterance(u);
         UNREGISTER_VOX(v);
-        return FALSE;
+        return -4;
     }
     label_data = (char **) calloc(label_size, sizeof(char *));
     for (i = 0, s = relation_head(utt_relation(u, "Segment")); s; s = item_next(s), i++) {
@@ -395,20 +323,27 @@ HTS_Boolean Flite_HTS_Engine_synthesize(Flite_HTS_Engine * f, const char *txt, c
         create_label(s, label_data[i]);
     }
 
-    // szm 测试label序列 
-    for (i = 0; i < label_size; i++)
-    {
-        printf("%s\n",label_data[i]);
+	// 写label序列到文件中     
+    if (file == NULL) 
+	{
+		printf("error:file == NULL !\n");
+		return -5;
     }
+	fp = fopen(file, "w");
+	if (fp == NULL)
+	{
+		printf("error:open %s failed!\n",file);
+		return -6;
+	}
 
-    ///* speech synthesis part */
-    //HTS_Engine_synthesize_from_strings(&f->engine, label_data, label_size);
-    //if (wav != NULL) {
-    //   fp = fopen(wav, "wb");
-    //   HTS_Engine_save_riff(&f->engine, fp);
-    //   fclose(fp);
-    //}
-    //HTS_Engine_refresh(&f->engine);
+	// szm 测试label序列 
+	for (i = 0; i < label_size; i++)
+	{
+		fprintf(fp, "%s\n", label_data[i]);
+	}
+	
+	fclose(fp);
+    
 
     for (i = 0; i < label_size; i++)
       free(label_data[i]);
@@ -416,15 +351,11 @@ HTS_Boolean Flite_HTS_Engine_synthesize(Flite_HTS_Engine * f, const char *txt, c
 
     delete_utterance(u);
     UNREGISTER_VOX(v);
-
-    return TRUE;
+	
+	
+    return 0;
 }
 
-/* Flite_HTS_Engine_clear: free system */
-void Flite_HTS_Engine_clear(Flite_HTS_Engine * f)
-{
-    HTS_Engine_clear(&f->engine);
-}
 
 typedef struct _Flite_Utterance {
     cst_voice *v;
@@ -606,20 +537,21 @@ int Flite_Text_Analyzer_get_stress(Flite_Text_Analyzer * analyzer, int phoneme_i
 }
 
 /* Flite_Text_Analyzer_get_label_data: get label data */
-HTS_Boolean Flite_Text_Analyzer_get_label_data(Flite_Text_Analyzer * analyzer, char ***label_data, int *label_size)
+int Flite_Text_Analyzer_get_label_data(Flite_Text_Analyzer * analyzer, 
+	char ***label_data, int *label_size)
 {
     Flite_Utterance *fu;
     int i;
     cst_item *s;
 
     if (analyzer == NULL || analyzer->pointer == NULL)
-      return FALSE;
+      return -1;
     fu = (Flite_Utterance *) analyzer->pointer;
 
     if (fu->nitem <= 0) {
         *label_size = 0;
         *label_data = NULL;
-        return TRUE;
+        return -2;
     }
 
     /* save labels */
@@ -630,7 +562,7 @@ HTS_Boolean Flite_Text_Analyzer_get_label_data(Flite_Text_Analyzer * analyzer, c
         create_label(s, (*label_data)[i]);
     }
 
-    return TRUE;
+    return 0;
 }
 
 /* Flite_Text_Analyzer_clear: finalize flite front-end */

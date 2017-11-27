@@ -132,9 +132,6 @@
     <ClInclude Include="include\flite_hts_engine.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\HTS_engine.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\us_ffeatures.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -161,9 +158,6 @@
     </ClInclude>
     <ClInclude Include="include\usenglish.h">
       <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HTS_hidden.h">
-      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -297,33 +291,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\usenglish.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_audio.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_engine.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_gstream.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_label.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_misc.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_model.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_pstream.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_sstream.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\HTS_vocoder.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
