@@ -142,9 +142,13 @@ int main(int argc, char **argv)
    if (fn_txt != NULL)
       fp_txt = fopen(fn_txt, "r");
 
-   if (fgets(buff, INPUT_BUFF_SIZE, fp_txt) != NULL && strlen(buff) > 0)
+   int num_sent = 0;
+   char labels[100];
+   while (fgets(buff, INPUT_BUFF_SIZE, fp_txt) != NULL && strlen(buff) > 0)
    {
-	   Flite_HTS_Engine_synthesize(buff, fn_label);
+	   num_sent++;
+	   _snprintf(labels, 100, "full\\%d.lab", num_sent);
+	   Flite_HTS_Engine_synthesize(buff, labels);
    }
       
    
