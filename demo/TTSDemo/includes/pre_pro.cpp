@@ -110,7 +110,8 @@ int PreProClass::init(const char *map_dir)
 	按照 str_pro/map.txt 中配置的几级转换规则  将原始大文本(多行) 转转成句子。
 	转换过程中，将字数小于 17 的小句子进行合并（不然会有韵律问题）。
 */
-int PreProClass::pre_pro_long(const std::string str_line, std::vector<std::string> &vec_out, int min_count)
+int PreProClass::pre_pro_long(const std::string str_line, std::vector<std::string> &vec_out,
+	int min_count)
 {
 	
 	char *tmp = NULL;
@@ -133,7 +134,7 @@ int PreProClass::pre_pro_long(const std::string str_line, std::vector<std::strin
 	}
 
 	// 去除掉多余的空格和tab
-	line = replace_all(line, "\t", "");
+	line = replace_all(line, "\t", " ");
 	line = replace_all(line, "　　　　　", "");
 	line = replace_all(line, "　　　　", "");
 	line = replace_all(line, "　　　", "");
@@ -149,29 +150,24 @@ int PreProClass::pre_pro_long(const std::string str_line, std::vector<std::strin
 	_snprintf(line_char, MAX_LINE_LEN, "%s", line.c_str());
 	tmp = strtok(line_char, "\n");
 	while (tmp != NULL)
-	{
-		// tmp 是以\n分割后的每一行(小句子)
-		// 添加判断：如果当前句子太小（UTF8 三个字符一个字 50个字符16个字）
-		str_cat += tmp; // 把当前小句子 加到累计string后面 
-
-		// 当前 已经攒够一句话了
-		// 10个字 
+	{		
+		str_cat = tmp; 
+		// 去掉首尾空格 
+		while(str_cat.size()> 0 && str_cat[0] == ' ')
+		{
+			str_cat = str_cat.erase(0, 1);
+		}
+		while (str_cat.size()>0 && str_cat[str_cat.size()-1] == ' ')
+		{
+			str_cat = str_cat.erase(str_cat.size()-1, 1);
+		}
+ 
 		if (str_cat.size()>min_count)
 		{
 			vec_out.push_back(str_cat);
-			str_cat = "";
-		}
-		else // 还不够...... 后面肯定还要添加 所以加上空格 
-		{
-			str_cat += " ";
 		}
 		
 		tmp = strtok(NULL, "\n");
-	}
-
-	if (str_cat.size() > 1)
-	{
-		vec_out.push_back(str_cat);
 	}
 
 	return 0;

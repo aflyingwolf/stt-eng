@@ -7,8 +7,6 @@
 #include <string>
 
 #include "inter_lib.h"
-#include "word_seg_lib.h"
-
 #include "pre_pro.h"
 
 #pragma comment(lib, "lib/ttsdll.lib")

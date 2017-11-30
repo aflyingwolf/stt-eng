@@ -1,3 +1,22 @@
-input_char:Chinese economy develops very fast in last few decades and a lot of people get rich. 
-sentence:Chinese economy develops very fast in last few decades and a lot of people get rich 
-test-line2short  ok
+input_char:Chinese economy develops very fast in last few decades and a lot of people get rich. In foreigners’ eyes, Chinese people are everywhere. 
+
+sentence:Chinese economy develops very fast in last few decades and a lot of people get rich
+sentence:In foreigners’ eyes, Chinese people are everywhere
+input_char:
+
+input_char:Indeed, traveling is one of the hottest plans for Chinese people. But compared to most foreigners, our manner is always criticized. 
+
+sentence:Indeed, traveling is one of the hottest plans for Chinese people
+sentence:But compared to most foreigners, our manner is always criticized
+input_char:
+
+input_char:The most obvious problem is talking loudly in the public occasion. Because we get used to be a group and haven’t realized our voice disturb others.     
+
+sentence:The most obvious problem is talking loudly in the public occasion
+sentence:Because we get used to be a group and haven’t realized our voice disturb others
+input_char:
+
+input_char:    
+
+input_char:    
+

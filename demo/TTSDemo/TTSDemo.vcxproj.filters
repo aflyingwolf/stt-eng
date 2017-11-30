@@ -16,6 +16,15 @@
     <Filter Include="TTSBase">
       <UniqueIdentifier>{953853b8-e2d4-4aed-bd6c-7e8326fdf098}</UniqueIdentifier>
     </Filter>
+    <Filter Include="flite">
+      <UniqueIdentifier>{5d5d5d83-899b-4e03-8293-8a8e4888821a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flite\include">
+      <UniqueIdentifier>{7d9f5044-919b-4d06-8dc7-39c2935c949a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flite\src">
+      <UniqueIdentifier>{5b34ec9d-8866-4a0e-beb7-c1bb921df03a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -45,9 +54,6 @@
     <ClInclude Include="includes\TTS_ALL.h">
       <Filter>TTSBase</Filter>
     </ClInclude>
-    <ClInclude Include="includes\word_seg_lib.h">
-      <Filter>TTSBase</Filter>
-    </ClInclude>
     <ClInclude Include="TTSInitDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -56,6 +62,150 @@
     </ClInclude>
     <ClInclude Include="includes\stdafx.h">
       <Filter>TTSBase</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cmu_lex.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cmu_lts_model.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_alloc.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_args.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_audio.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_cart.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_endian.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_error.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_features.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_ffeatures.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_file.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_hrg.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_item.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_lexicon.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_lts.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_lts_rewrites.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_math.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_phoneset.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_regex.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_regex_defs.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_relation.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_sigpr.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_socket.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_ss.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_string.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_sts.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_synth.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_tokenstream.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_track.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_utt_utils.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_utterance.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_val.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_val_const.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_val_defs.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_viterbi.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_voice.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\cst_wave.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\flite.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\flite_hts_engine.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_ffeatures.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_int_accent_cart.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_int_tone_cart.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_nums_cart.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_phrasing_cart.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_pos_cart.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_regexes.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\us_text.h">
+      <Filter>flite\include</Filter>
+    </ClInclude>
+    <ClInclude Include="flite\include\usenglish.h">
+      <Filter>flite\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,14 +224,143 @@
     <ClCompile Include="includes\tts_all.cpp">
       <Filter>TTSBase</Filter>
     </ClCompile>
-    <ClCompile Include="includes\word_seg_lib.cpp">
-      <Filter>TTSBase</Filter>
-    </ClCompile>
     <ClCompile Include="TTSInitDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="includes\pre_pro.cpp">
       <Filter>TTSBase</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_lex.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_lex_data.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_lex_entries.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_lts_model.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_lts_rules.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_postlex.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cmu_us_kal.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_alloc.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_cart.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_error.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_features.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_ffeature.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_ffeatures.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_item.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_lexicon.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_lts.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_phoneset.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_regex.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_relation.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_string.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_synth.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_tokenstream.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_utt_utils.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_utterance.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_val.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_val_const.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_val_user.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\cst_voice.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\flite.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\flite_hts_engine.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\regexp.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_aswd.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_expand.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_ffeatures.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_gpos.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_int_accent_cart.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_int_tone_cart.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_nums_cart.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_phoneset.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_phrasing_cart.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_pos_cart.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\us_text.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\usenglish.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\main_flite_hts_engine.c">
+      <Filter>flite\src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

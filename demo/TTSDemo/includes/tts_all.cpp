@@ -1,20 +1,16 @@
 #include "afx.h"
 #include "tts_all.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdarg.h>
+
+#include "flite_hts_engine.h"
+
+#define INPUT_BUFF_SIZE 1024
 
 /*
-处理分词后的字符串： // 分别/d 达/v 二万三千一百七十/m 元/q
-://分别/d 达/v 二万/m 三千/m 一百/m 七十/m 元/q
-*/
-int split_long_word()
-{
-	return 0;
-}
-
-/*
-	传入 model\LC\model-like-77  直接就是声学模型
-	只有ttsdll用到了此 目录
-	其他 tn str_pro 分词 都写死在data里面了 
+	传入 model\LC 直接就是声学模型 
 */
 int TTS_ALL::init(const char *model_dir)
 {
@@ -117,7 +113,7 @@ int TTS_ALL::tts(const char *input, short *buff, int buff_size)
 	fp_test_out = fopen("temp.txt", "r");
 	
 
-	
+	///  文本框中的每句话  
 	while ( (tmp = fgets(lines, MAX_LINE_SIZE, fp_test_out)) != NULL )
 	{
 		str_1 = lines;
@@ -126,7 +122,7 @@ int TTS_ALL::tts(const char *input, short *buff, int buff_size)
 
 		// 断句 
 		std::vector<std::string> vec_out;			
-		ret = this->m_pp.pre_pro_long(str_1, vec_out, 3); // 50正常 
+		ret = this->m_pp.pre_pro_long(str_1, vec_out, 2);  
 
 		// 每一个字符串 不包含其他字符
 		std::vector<std::string >::iterator it_vec;
@@ -137,7 +133,10 @@ int TTS_ALL::tts(const char *input, short *buff, int buff_size)
 			fprintf(fp_log, "sentence:%s\n", str_1.c_str());
 			fflush(fp_log);
 			
-			//"新华网/nt 北京/ns 十二月/t 二十七日/t 电/n   记者/n 邹伟/nr "
+			//"Chinese economy develops very fast in last few decades and a lot of people get rich."
+			// 调用flite  生成label序列 
+			Flite_HTS_Engine_synthesize(str_1.c_str(), "label.txt");
+
 			len = m_tts.line2short_array(str_1.c_str(), buff_tmp, WAV_SIZE);
 			if (len < 0)
 			{ 
@@ -145,8 +144,7 @@ int TTS_ALL::tts(const char *input, short *buff, int buff_size)
 				fflush(fp_log);
 				return len; 
 			}
-			fprintf(fp_log, "test-line2short  ok\n");
-			fflush(fp_log);
+
 
 			// 对 buff_tmp（长度为 ret） 进行首尾静音处理
 			int left = 0;
@@ -197,11 +195,6 @@ TTS_ALL::~TTS_ALL()
 		fp_log = NULL;
 	}
 
-	if (this->nlpir_flag == 1)
-	{
-		delete_nlpir();
-		this->nlpir_flag = 0;
-	}
 }
 
 
