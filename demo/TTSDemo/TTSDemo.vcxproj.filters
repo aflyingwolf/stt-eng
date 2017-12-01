@@ -317,9 +317,6 @@
     <ClCompile Include="flite\src\flite.c">
       <Filter>flite\src</Filter>
     </ClCompile>
-    <ClCompile Include="flite\src\flite_hts_engine.c">
-      <Filter>flite\src</Filter>
-    </ClCompile>
     <ClCompile Include="flite\src\regexp.c">
       <Filter>flite\src</Filter>
     </ClCompile>
@@ -360,6 +357,9 @@
       <Filter>flite\src</Filter>
     </ClCompile>
     <ClCompile Include="flite\src\main_flite_hts_engine.c">
+      <Filter>flite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="flite\src\flite_hts_engine.c">
       <Filter>flite\src</Filter>
     </ClCompile>
   </ItemGroup>

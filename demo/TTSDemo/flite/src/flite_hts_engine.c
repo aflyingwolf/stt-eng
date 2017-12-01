@@ -61,7 +61,10 @@
 #include "cst_synth.h"
 #include "cst_utt_utils.h"
 
+
 #include "flite_hts_engine.h"
+
+
 
 
 #define REGISTER_VOX register_cmu_us_kal
@@ -339,6 +342,22 @@ int Flite_HTS_Engine_synthesize(const char *txt, const char *file)
 	// szm 测试label序列 
 	for (i = 0; i < label_size; i++)
 	{
+		// label序列的处理   ax 换成 ah
+		// 使用replace替换即可
+		int len = strlen(label_data[i]);
+		int k = 0; 
+		while (k < len-1)
+		{
+			if (label_data[i][k] == 'a' && label_data[i][k+1] == 'x')
+			{
+				label_data[i][k] = 'a';
+				label_data[i][k + 1] = 'h';
+				k++;
+			}
+			k++;
+		}
+		
+		
 		fprintf(fp, "%s\n", label_data[i]);
 	}
 	
